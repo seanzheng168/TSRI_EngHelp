@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>EDA Cloud 2.0 使用常見問題</title>
+  <style>
+    body { font-family: sans-serif; max-width: 900px; margin: auto; padding: 20px; background: #f9f9f9; }
+    h1 { color: #003366; text-align: center; }
+    input[type="text"] { width: 100%; padding: 10px; margin-bottom: 20px; font-size: 1em; }
+    .faq-item { margin-bottom: 10px; background: white; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+    summary { font-weight: bold; padding: 10px; cursor: pointer; font-size: 1.1em; }
+    details[open] summary::after { content: " ▲"; }
+    summary::after { content: " ▼"; float: right; }
+    details > div { padding: 0 15px 15px; white-space: pre-wrap; }
+  </style>
+</head>
+<body>
+  <h1>EDA Cloud 2.0 使用常見問題</h1>
+  <input type="text" id="searchBox" placeholder="輸入關鍵字進行搜尋...">
+  <div id="faqContainer">
+
+  <div class="faq-item">
+    <details>
+      <summary>1. 登入 EDA Cloud VPN 顯示 "無法建立工作階段"</summary>
+      <p>"請檢查目前電腦 連線使用的實體 IP 資訊，並比對 申請帳號時提供的 IP 是否相同 若目前使用 I P 與申請帳號 I P 	不同則無法通過驗證 登入，如需變更 I P 資訊請至 EDA Cloud2.0 帳號申請頁面提出 修改
+	申請，帳號申請頁面 EDA Cloud/Service Lab 帳號申請 選擇您的帳號 修改 """"，填寫正確資訊後送
+	出即可。"
+</p>
+      <p>查詢 IP 可參考：<a href="https://en.wikipedia.org/wiki/Wikipedia:Get_my_IP_address" target="_blank">此連結</a></p>
+      <p>※EDA Cloud 2.0僅開放來源為學術網路IP連線，使用非學術網路IP連線將會導致登入驗證失敗。</p>
+      <p>※EDA Cloud 2.0 Service Lab(sa)帳號僅開放中心設置先進晶片實驗室(Service Lab)連線使用 。
+</p>
+    </details>
+  </div>
+
+  <div class="faq-item">
+    <details>
+      <summary>2. 登入 Citrix VPX 顯示 "無法登入請關閉您的瀏覽器"</summary>
+      <p>此為 Cache 問題，請清除瀏覽器所有瀏覽資料並關閉 Citrix Workspace，再重新登入。</p>
+    </details>
+  </div>
+
+  <div class="faq-item">
+    <details>
+      <summary>3. 點選虛擬桌面後閃退或顯示 "無法啟動"</summary>
+      <p>1. 請清除瀏覽器快取、關閉 Citrix Workspace，重新登入測試。</p>
+      <p>2. 若無效，請移除 Citrix Workspace 並安裝 LTSR 版本。</p>
+      <p>3. 若 CPU 使用率長時間過高，請聯絡客服安排平台重啟。</p>
+    </details>
+  </div>
+
+  <script>
+    const searchBox = document.getElementById("searchBox");
+    searchBox.addEventListener("input", function() {
+      const keyword = this.value.toLowerCase();
+      document.querySelectorAll(".faq-item").forEach(item => {
+        const text = item.innerText.toLowerCase();
+        item.style.display = text.includes(keyword) ? "" : "none";
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>進階密碼產生器</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #f0f0f0;
+    }
+    .container {
+      max-width: 650px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    input[type="number"], input[type="checkbox"] {
+      margin-top: 5px;
+    }
+    textarea {
+      width: 100%;
+      height: 250px;
+      font-family: monospace;
+      margin-top: 15px;
+      padding: 10px;
+      font-size: 14px;
+    }
+    button {
+      padding: 10px;
+      font-size: 16px;
+      margin-top: 10px;
+      width: 49%;
+      cursor: pointer;
+    }
+    .checkbox-group {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>進階密碼產生器</h1>
+
+    <label>產生幾組密碼？</label>
+    <input type="number" id="count" min="1" max="999" value="10">
+
+    <label>每組密碼長度？</label>
+    <input type="number" id="length" min="4" max="128" value="12">
+
+    <div class="checkbox-group">
+      <label><input type="checkbox" id="exclude" checked> 排除混淆字元（oO0lL1I）</label>
+      <label><input type="checkbox" id="includeUpper" checked> 包含大寫英文</label>
+      <label><input type="checkbox" id="includeLower" checked> 包含小寫英文</label>
+      <label><input type="checkbox" id="includeSymbols" checked> 包含符號</label>
+    </div>
+
+    <button onclick="generatePasswords()">產生密碼</button>
+    <button onclick="copyToClipboard()">複製全部密碼</button>
+
+    <textarea id="output" placeholder="密碼將顯示在此..."></textarea>
+  </div>
+
+  <script>
+    function generatePasswords() {
+      const count = parseInt(document.getElementById("count").value);
+      const length = parseInt(document.getElementById("length").value);
+      const exclude = document.getElementById("exclude").checked;
+      const includeUpper = document.getElementById("includeUpper").checked;
+      const includeLower = document.getElementById("includeLower").checked;
+      const includeSymbols = document.getElementById("includeSymbols").checked;
+
+      if (!includeUpper && !includeLower && !includeSymbols) {
+        alert("至少要勾選一種字元類型！");
+        return;
+      }
+
+      if (isNaN(count) || count < 1 || count > 999 || isNaN(length) || length < 4 || length > 128) {
+        alert("請輸入有效的密碼組數與長度！");
+        return;
+      }
+
+      const confusing = ['o', 'O', '0', 'l', 'L', '1', 'I'];
+      const lowerSet = 'abcdefghijklmnopqrstuvwxyz'.split('');
+      const upperSet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+      const digits = '23456789'.split('');
+      const symbols = '!@#$%^&*()-_=+[]{};:,.<>?'.split('');
+
+      let charPool = digits.slice(); // 基本包含數字
+
+      if (includeLower) charPool = charPool.concat(lowerSet);
+      if (includeUpper) charPool = charPool.concat(upperSet);
+      if (includeSymbols) charPool = charPool.concat(symbols);
+
+      if (exclude) {
+        charPool = charPool.filter(c => !confusing.includes(c));
+      }
+
+      if (charPool.length === 0) {
+        alert("沒有可用字元可用來產生密碼！");
+        return;
+      }
+
+      const results = [];
+      for (let i = 0; i < count; i++) {
+        let pw = '';
+        for (let j = 0; j < length; j++) {
+          pw += charPool[Math.floor(Math.random() * charPool.length)];
+        }
+        results.push(pw);
+      }
+
+      document.getElementById("output").value = results.join("\n");
+    }
+
+    function copyToClipboard() {
+      const output = document.getElementById("output");
+      output.select();
+      document.execCommand("copy");
+      alert("密碼已複製到剪貼簿！");
+    }
+  </script>
+</body>
+</html>
