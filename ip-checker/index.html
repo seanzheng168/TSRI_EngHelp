@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>IP 查詢工具</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; padding: 40px; background: #f4f4f4; }
+    h1 { color: #004080; }
+    .ip-box { margin: 20px auto; background: white; padding: 20px; width: 400px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    button { padding: 10px 20px; font-size: 1em; margin-top: 10px; }
+    p { font-size: 1.2em; margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <h1>🌐 IP 查詢工具</h1>
+  <div class="ip-box">
+    <button onclick="getIPs()">查詢 IP 位址</button>
+    <p><strong>本機 IP：</strong> <span id="local-ip">尚未取得</span></p>
+    <p><strong>外部 IP：</strong> <span id="public-ip">尚未取得</span></p>
+  </div>
+
+  <script>
+    function getIPs() {
+      // Public IP 查詢
+      fetch('https://api.ipify.org?format=json')
+        .then(res => res.json())
+        .then(data => {
+          document.getElementById('public-ip').innerText = data.ip;
+        });
+
+      // Local IP 查詢
+      const RTCPeerConnection = window.RTCPeerConnection || window.webkitRTCPeerConnection;
+      const pc = new RTCPeerConnection({iceServers:[]});
+      pc.createDataChannel('');
+      pc.createOffer().then(offer => pc.setLocalDescription(offer)).catch(console.error);
+      pc.onicecandidate = event => {
+        if (!event || !event.candidate) return;
+        const ipMatch = /([0-9]{1,3}(\.[0-9]{1,3}){3})/.exec(event.candidate.candidate);
+        if (ipMatch) document.getElementById('local-ip').innerText = ipMatch[1];
+        pc.onicecandidate = null;
+      };
+    }
+  </script>
+</body>
+</html>
