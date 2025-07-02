@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>EDA Cloud 2.0 使用常見問題</title>
+  <style>
+    body { font-family: sans-serif; max-width: 900px; margin: auto; padding: 20px; background: #f9f9f9; }
+    h1 { color: #003366; text-align: center; }
+    input[type="text"] { width: 100%; padding: 10px; margin-bottom: 20px; font-size: 1em; }
+    .faq-item { margin-bottom: 10px; background: white; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+    summary { font-weight: bold; padding: 10px; cursor: pointer; font-size: 1.1em; }
+    details[open] summary::after { content: " ▲"; }
+    summary::after { content: " ▼"; float: right; }
+    details > div { padding: 0 15px 15px; white-space: pre-wrap; }
+  </style>
+</head>
+<body>
+  <h1>EDA Cloud 2.0 使用常見問題</h1>
+  <input type="text" id="searchBox" placeholder="輸入關鍵字進行搜尋...">
+  <div id="faqContainer">
+
+    <div class="faq-item">
+      <details>
+        <summary>1. 4.   按下鍵盤 Windows 鍵+R 鍵呼叫"執行"，並輸入 ncpa.cpl</summary>
+        <div>將_Common_TSRI_Access-Profile-STD-PA - ehvpn.tsri.org.tw 網卡刪除</div>
+      </details>
+    </div>
+    
+    <div class="faq-item">
+      <details>
+        <summary>2. 5.   選擇以系統管理員身分執行 終端機</summary>
+        <div>輸入#sc qc wanarp，並確認 START_TYPE 輸出值是否為"2 AUTO_START" 若此欄位值不同，請接續輸入#sc config wanarp start= auto 完成後請再輸入 sc qc wanarp 確認值是否已變更正確</div>
+      </details>
+    </div>
+    
+  </div>
+  <script>
+    const searchBox = document.getElementById("searchBox");
+    searchBox.addEventListener("input", function() {
+      const keyword = this.value.toLowerCase();
+      document.querySelectorAll(".faq-item").forEach(item => {
+        const text = item.innerText.toLowerCase();
+        item.style.display = text.includes(keyword) ? "" : "none";
+      });
+    });
+  </script>
+</body>
+</html>
