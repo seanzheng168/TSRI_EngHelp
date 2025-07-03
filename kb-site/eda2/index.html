@@ -4,76 +4,195 @@
   <meta charset="UTF-8">
   <title>EDA Cloud 2.0 使用常見問題</title>
   <style>
-    body { font-family: sans-serif; max-width: 900px; margin: auto; padding: 20px; background: #f9f9f9; }
-    h1 { color: #003366; text-align: center; }
-    input[type="text"] { width: 100%; padding: 10px; margin-bottom: 20px; font-size: 1em; }
-    .faq-item { margin-bottom: 10px; background: white; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
-    summary { font-weight: bold; padding: 10px; cursor: pointer; font-size: 1.1em; }
-    details[open] summary::after { content: " ▲"; }
-    summary::after { content: " ▼"; float: right; }
-    details > div { padding: 0 15px 15px; white-space: pre-wrap; }
+    body {
+      font-family: 'Noto Sans TC', sans-serif;
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+      background: #f9f9f9;
+      line-height: 1.7;
+      color: #333;
+    }
+
+    h1 {
+      color: #003366;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      font-size: 1em;
+      border: 1px solid #ccc;
+      margin-bottom: 30px;
+      border-radius: 5px;
+    }
+
+    .faq-item {
+      margin-bottom: 20px;
+      background: #fff;
+      border-radius: 6px;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+    }
+
+    summary {
+      font-weight: bold;
+      padding: 15px;
+      font-size: 1.1em;
+      background-color: #eef4f8;
+      cursor: pointer;
+      position: relative;
+      text-align: left;
+    }
+
+    details[open] summary::after {
+      content: "▲";
+    }
+
+    summary::after {
+      content: "▼";
+      position: absolute;
+      right: 20px;
+    }
+
+    details > div, details > p, details > figure {
+      padding: 0 20px 10px 20px;
+      text-align: left;
+    }
+
+    p {
+      margin: 10px 0;
+    }
+
+    figure {
+      margin: 20px auto;
+      text-align: center;
+    }
+
+    figcaption {
+      font-size: 0.9em;
+      color: #666;
+      margin-top: 5px;
+    }
+
+    img {
+      max-width: 100%;
+      border-radius: 4px;
+    }
   </style>
 </head>
 <body>
+
   <h1>EDA Cloud 2.0 使用常見問題</h1>
+
   <input type="text" id="searchBox" placeholder="輸入關鍵字進行搜尋...">
+
   <div id="faqContainer">
 
-  <div class="faq-item">
-    <details>
-      <summary>1. 登入 EDA Cloud VPN 顯示 "無法建立工作階段"</summary>
-      <p>請檢查目前電腦連線使用的實體IP資訊，並比對申請帳號時提供的IP是否相同，若目前使用IP與申請帳號IP不同則無法通過驗證登入，如需變更IP資訊請至EDA Cloud2.0帳號申請頁面提出	修改申請，帳號申請頁面>EDA Cloud/Service Lab帳號申請>選擇您的帳號"修改"，填寫正確資訊後送出即可。</p>
-      <p>查詢 IP 可參考：<a href="https://en.wikipedia.org/wiki/Wikipedia:Get_my_IP_address" target="_blank">此連結</a></p>
-      <p>※EDA Cloud 2.0僅開放來源為學術網路IP連線，使用非學術網路IP連線將會導致登入驗證失敗。</p>
-      <p>※EDA Cloud 2.0 Service Lab(sa)帳號僅開放中心設置先進晶片實驗室(Service Lab)連線使用。</p>
-    </details>
-  </div>
+    <!-- 以下為每一則 FAQ -->
+    <div class="faq-item">
+      <details>
+        <summary>1. 登入 EDA Cloud VPN 顯示 "無法建立工作階段"</summary>
+        <p>請檢查目前電腦連線使用的實體 IP 資訊，並比對申請帳號時提供的 IP 是否相同。若目前使用 IP 與申請帳號 IP 不同則無法通過驗證登入，如需變更 IP 請至帳號申請頁面提出修改申請：</p>
+        <p><strong>帳號申請頁面：</strong>EDA Cloud/Service Lab 帳號申請 > 選擇您的帳號「修改」 > 填寫正確資訊後送出。</p>
+        <p>查詢 IP 可參考：<a href="https://en.wikipedia.org/wiki/Wikipedia:Get_my_IP_address" target="_blank">此連結</a></p>
+        <p>※ EDA Cloud 2.0僅開放來源為學術網路IP連線，使用非學術網路IP連線將會導致登入驗證失敗。</p>
+        <p>※ EDA Cloud 2.0Service Lab (sa)帳號僅開放中心設置先進晶片實驗室(Service Lab)連線使用。</p>
+      </details>
+    </div>
 
-  <div class="faq-item">
-    <details>
-      <summary>2. 登入EDA Cloud Citrix VPX網頁後顯示"目前無法登入請關閉您的瀏覽器，以保護您的帳號</summary>
-      <p>此狀況為瀏覽器Cache與Citrix Workspace異常導致，請將瀏覽器的瀏覽資料清除，時間範圍選擇"不限時間"或"所有時間"，完成後關閉瀏覽器並結束Citrix Workspace再重新開啟網頁登入	即可。</p>
-      <figure>
-        <img src="images/Q2-img1.png" width="600">
-        <figcaption>圖 1：</figcaption>
-      </figure>
+    <div class="faq-item">
+      <details>
+        <summary>2. 登入EDA Cloud Citrix VPX網頁後顯示"目前無法登入請關閉您的瀏覽器，以保護您的帳號</summary>
+        <p>此狀況為瀏覽器Cache與Citrix Workspace異常導致，請將瀏覽器的瀏覽資料清除，時間範圍選擇"不限時間"或"所有時間"，完成後關閉瀏覽器並結束Citrix Workspace再重新開啟網頁登入即可。</p>
 
-      <figure>
-        <img src="images/Q2-img2.png" width="600">
-        <figcaption>圖 2：</figcaption>
-      </figure>
+        <figure><img src="images/Q2-img1.png"></figure>
+	<figure><img src="images/Q2-img2.png"></figure>
+      </details>
+    </div>
 
-    </details>
-  </div>
+    <div class="faq-item">
+      <details>
+        <summary>3. 登入EDA Cloud Citrix VPX並點選圖示開啟虛擬桌面後閃退或顯示"無法啟動"</summary>
+        <p>1. 瀏覽器Cache與Citrix Workspace異常導致，請將瀏覽器的瀏覽資料清除，時間範圍選擇"不限時間"或"所有時間"，完成後關閉瀏覽器並結束Citrix Workspace再重新開啟網頁登入即可。</p>
 
-  <div class="faq-item">
-    <details>
-      <summary>3. 登入EDA Cloud Citrix VPX並點選圖示開啟虛擬桌面後閃退或顯示”無法啟動”</summary>
-      <p>1. 瀏覽器Cache與Citrix Workspace異常導致，請將瀏覽器的瀏覽資料清除，時間範圍選擇"不限時間"或"所有時間"，完成後關閉瀏覽器並結束Citrix Workspace再重新開啟網頁登入即可。</p>
-      <figure>
-        <img src="images/Q3-img1.png" width="600">
-        <figcaption>圖 1：</figcaption>
-      </figure>
+        <figure><img src="images/Q3-img1.png"></figure>
+	<figure><img src="images/Q3-img2.png"></figure>
 
-      <figure>
-        <img src="images/Q3-img2.png" width="600">
-        <figcaption>圖 2：</figcaption>
-      </figure>
+        <p>若仍異常，請移除並重裝 Citrix Workspace 的 LTSR 版本再試。</p>
+        <p>2. 若教授實驗室團隊平台CPU長時間高負載或時常使用"中斷連線"而非"Log out"，時間一久將會導致服務異常，開啟terminal使用top指令可觀察%CPU值，此數值超過400則容易導致服務異常，使用w指令可觀察session狀況若有多筆IDLE多天的session也會影響系統服務，需重啟平台來修正異常狀況，可透過客服諮詢提出重啟教授研究團隊平台需求並附上可重啟時間。</p>
+        <p>※ 雙螢幕環境使用者，請先將輸出改為"僅電腦螢幕"(單螢幕輸出)後再將VDI桌面開啟，開啟正常後再調整為延伸。</p>
 
-      <p>執行後若狀況仍相同，請將Citrix Workspace移除再重新安裝LTSR版本，並再次連線測試。</p>
-      <p>2. 若教授實驗室團隊平台CPU長時間高負載或時常使用"中斷連線"而非"Log out"，時間一久將會導致服務異常，開啟terminal使用top指令可觀察%CPU值，此數值超過400則容易導致服務異常，使用w指令可觀察session狀況若有多筆IDLE多天的session也會影	響系統服務，需重啟平台來修正異常狀況，可透過客服諮詢提出重啟教授研究團隊平台需求並附上可重啟時間。</p>
-      <p>※ 雙螢幕環境使用者，請先將輸出改為"僅電腦螢幕"(單螢幕輸出)後再將VDI桌面開啟，開啟正常後再調整為延伸。</p>
-      <figure>
-        <img src="images/Q3-img3.png" width="600">
-        <figcaption>圖 3：</figcaption>
-      </figure>	
-	
-    </details>
+	<figure><img src="images/Q3-img3.png"></figure>
+      </details>
+    </div>
+
+    <div class="faq-item">
+      <details>
+        <summary>8. 連線EDA Cloud VPN網頁登入後開啟F5 VPN視窗顯示連線失敗、無法連線、已中斷</summary>
+        <p>此問題與個人電腦系統設定異常有關，請按照下列步驟進行修正，若修正後狀況仍相同則建議將個人電腦作業系統重新安裝。</p>
+        <p>1. 成功登入網頁，但 F5 視窗顯示已中斷</p>
+        <figure>
+          <img src="images/Q8-img1.png">
+        </figure>
+
+        <p>2. 下載並執行 <a href="https://ehvpn.tsri.org.tw/public/download/f5wininfo.exe" target="_blank">f5wininfo utility</a></p>
+        <figure><img src="images/Q8-img2.png"></figure>
+
+        <p>3.執行f5wininfo.exe</p>
+        <figure>
+          <figcaption>選擇Tools > Remove Components</figcaption>
+	  <img src="images/Q8-img3.png">
+        </figure>
+
+        <figure>
+          <figcaption>全選 > Yes</figcaption>
+	  <img src="images/Q8-img4.png">
+        </figure>
+
+        <figure>
+          <figcaption>選擇Continue</figcaption>
+	  <img src="images/Q8-img5.png">
+        </figure>
+
+        <p>4. 按下 Win + R 鍵</p>
+        <figure>
+          <figcaption>輸入ncpa.cpl開啟網路連線設定</figcaption>
+	  <img src="images/Q8-img6.png">
+        </figure>
+
+	<figure>
+          <figcaption>將_Common_TSRI_Access-Profile-STD-PA-ehvpn.tsri.org.tw 網卡刪除</figcaption>
+	  <img src="images/Q8-img7.png">
+        </figure>
+
+        <p>5. 選擇以系統管理員身分執行終端機</p>
+	<figure><img src="images/Q8-img8.png"></figure>
+	<figure>
+          <figcaption>輸入#sc qc wanarp，並確認START_TYPE輸出值是否為"2 AUTO_START"</figcaption>
+	  <figcaption>若此欄位值不同，請接續輸入#sc config wanarp start= auto</figcaption>
+	  <figcaption>完成後請再輸入sc qc wanarp確認值是否已變更正確</figcaption>
+	  <img src="images/Q8-img9.png">
+        </figure>
+	<p>上述步驟完成後接續輸入#netsh int ipreset，執行完成請將電腦重啟並執行f5vpn_setup.exe進行安裝，安裝完成後請再次連線<a href="https://ehvpn.tsri.org.tw" target="_blank">https://ehvpn.tsri.org.tw</a>確認是否可正常連線</p>
+        <figure>
+          <figcaption>※請注意執行#netsh int ip reset指令將重置網卡設定，若非使用DHCP IP而是手動指定IP，請先將您的IP設定記錄下來，待系統重啟完成後在將IP設定回該網卡。</figcaption>
+	  <img src="images/Q8-img10.png">
+        </figure>
+
+        <p>6. 若上述步驟執行後狀況仍相同，可按照下方步驟將VPN連線日誌匯出，並填寫客戶諮詢案件附上日誌讓工程師分析確認問題原因，或自行將系統重新安裝後再次進行連線測試。</p>
+	<figure><img src="images/Q8-img11.png"></figure
+        <figure><img src="images/Q8-img12.png"></figure>
+
+      </details>
+    </div>
   </div>
 
   <script>
     const searchBox = document.getElementById("searchBox");
-    searchBox.addEventListener("input", function() {
+    searchBox.addEventListener("input", function () {
       const keyword = this.value.toLowerCase();
       document.querySelectorAll(".faq-item").forEach(item => {
         const text = item.innerText.toLowerCase();
@@ -81,5 +200,6 @@
       });
     });
   </script>
+
 </body>
 </html>
