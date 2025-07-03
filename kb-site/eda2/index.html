@@ -31,17 +31,43 @@
 
   <div class="faq-item">
     <details>
-      <summary>2. 登入 Citrix VPX 顯示 "無法登入請關閉您的瀏覽器"</summary>
-      <p>此為 Cache 問題，請清除瀏覽器所有瀏覽資料並關閉 Citrix Workspace，再重新登入。</p>
+      <summary>2. 登入EDA Cloud Citrix VPX網頁後顯示"目前無法登入請關閉您的瀏覽器，以保護您的帳號</summary>
+      <p>此狀況為瀏覽器Cache與Citrix Workspace異常導致，請將瀏覽器的瀏覽資料清除，時間範圍選擇"不限時間"或"所有時間"，完成後關閉瀏覽器並結束Citrix Workspace再重新開啟網頁登入	即可。</p>
+      <figure>
+        <img src="images/Q2-img1.png" width="600">
+        <figcaption>圖 1：</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images/Q2-img2.png" width="600">
+        <figcaption>圖 2：</figcaption>
+      </figure>
+
     </details>
   </div>
 
   <div class="faq-item">
     <details>
-      <summary>3. 點選虛擬桌面後閃退或顯示 "無法啟動"</summary>
-      <p>1. 請清除瀏覽器快取、關閉 Citrix Workspace，重新登入測試。</p>
-      <p>2. 若無效，請移除 Citrix Workspace 並安裝 LTSR 版本。</p>
-      <p>3. 若 CPU 使用率長時間過高，請聯絡客服安排平台重啟。</p>
+      <summary>3. 登入EDA Cloud Citrix VPX並點選圖示開啟虛擬桌面後閃退或顯示”無法啟動”</summary>
+      <p>1. 瀏覽器Cache與Citrix Workspace異常導致，請將瀏覽器的瀏覽資料清除，時間範圍選擇"不限時間"或"所有時間"，完成後關閉瀏覽器並結束Citrix Workspace再重新開啟網頁登入即可。</p>
+      <figure>
+        <img src="images/Q3-img1.png" width="600">
+        <figcaption>圖 1：</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images/Q3-img2.png" width="600">
+        <figcaption>圖 2：</figcaption>
+      </figure>
+
+      <p>執行後若狀況仍相同，請將Citrix Workspace移除再重新安裝LTSR版本，並再次連線測試。</p>
+      <p>2. 若教授實驗室團隊平台CPU長時間高負載或時常使用"中斷連線"而非"Log out"，時間一久將會導致服務異常，開啟terminal使用top指令可觀察%CPU值，此數值超過400則容易導致服務異常，使用w指令可觀察session狀況若有多筆IDLE多天的session也會影	響系統服務，需重啟平台來修正異常狀況，可透過客服諮詢提出重啟教授研究團隊平台需求並附上可重啟時間。</p>
+      <p>※ 雙螢幕環境使用者，請先將輸出改為"僅電腦螢幕"(單螢幕輸出)後再將VDI桌面開啟，開啟正常後再調整為延伸。</p>
+      <figure>
+        <img src="images/Q3-img3.png" width="600">
+        <figcaption>圖 3：</figcaption>
+      </figure>	
+	
     </details>
   </div>
 
