@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <title>系統資源管理</title>
+  <link rel="stylesheet" href="/static/style.css" />
+  <script src="https://cdn.sheetjs.com/xlsx-0.20.1/package/dist/xlsx.full.min.js"></script>
+</head>
+<body>
+  <h1>系統資源紀錄 <button onclick="logout()">登出</button></h1>
+
+  <select id="subnetFilter">
+    <option value="all">全部網段</option>
+  </select>
+  <input type="text" id="search" placeholder="搜尋 IP 或 系統..." />
+  <button onclick="exportExcel()">匯出 Excel</button>
+
+  <table>
+    <thead>
+      <tr>
+        <th>IP</th>
+        <th>帳號</th>
+        <th>密碼</th>
+        <th>系統</th>
+        <th>備註</th>
+      </tr>
+    </thead>
+    <tbody id="recordList"></tbody>
+  </table>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
