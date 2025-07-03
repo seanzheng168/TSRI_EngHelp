@@ -1,0 +1,28 @@
+{
+  "volume": [
+    {
+      "title": "列出所有 Volume",
+      "command": "volume show",
+      "description": "顯示目前所有的 volume 資訊"
+    },
+    {
+      "title": "建立 Volume",
+      "command": "volume create -vserver vs1 -volume vol1 -aggregate aggr1 -size 1g",
+      "description": "建立一個新的 Volume"
+    }
+  ],
+  "aggr": [
+    {
+      "title": "查看 Aggregate 資訊",
+      "command": "aggr show",
+      "description": "列出目前的 Aggregate 狀態"
+    }
+  ],
+  "network": [
+    {
+      "title": "顯示網路介面",
+      "command": "network interface show",
+      "description": "列出所有網路介面狀態"
+    }
+  ]
+}
