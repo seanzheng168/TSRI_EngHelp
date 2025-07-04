@@ -66,6 +66,7 @@
       "command": "ss -tuln",
       "description": "顯示目前系統上開啟的 TCP/UDP port"
     }
+    ],
   "package": [
     {
       "title": "安裝軟體",
