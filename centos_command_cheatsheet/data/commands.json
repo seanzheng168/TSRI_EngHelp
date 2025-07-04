@@ -1,0 +1,38 @@
+{
+  "system": [
+    {
+      "title": "查看系統版本",
+      "command": "cat /etc/centos-release",
+      "description": "顯示目前安裝的 CentOS 版本"
+    },
+    {
+      "title": "重新啟動系統",
+      "command": "reboot",
+      "description": "重新啟動作業系統"
+    }
+  ],
+  "network": [
+    {
+      "title": "查看 IP 位址",
+      "command": "ip a",
+      "description": "顯示目前的網路介面和 IP 位址"
+    },
+    {
+      "title": "重新啟動網路服務",
+      "command": "systemctl restart network",
+      "description": "重新啟動 CentOS 的網路服務"
+    }
+  ],
+  "package": [
+    {
+      "title": "安裝軟體",
+      "command": "yum install <package-name>",
+      "description": "使用 yum 安裝指定的套件"
+    },
+    {
+      "title": "更新所有套件",
+      "command": "yum update -y",
+      "description": "更新所有已安裝套件"
+    }
+  ]
+}
