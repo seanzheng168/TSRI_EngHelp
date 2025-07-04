@@ -66,5 +66,16 @@
       "command": "ss -tuln",
       "description": "顯示目前系統上開啟的 TCP/UDP port"
     }
+  "package": [
+    {
+      "title": "安裝軟體",
+      "command": "yum install <package-name>",
+      "description": "使用 yum 安裝指定的套件"
+    },
+    {
+      "title": "更新所有套件",
+      "command": "yum update -y",
+      "description": "更新所有已安裝套件"
+    }
   ]
 }
