@@ -78,5 +78,5 @@
       "command": "yum update -y",
       "description": "更新所有已安裝套件"
     }
-  ],
+  ]
 }
