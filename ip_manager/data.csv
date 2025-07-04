@@ -1,5 +1,0 @@
-ip,username,password,system,note
-192.168.1.10,admin,pass123,Windows,備註一
-192.168.1.20,user1,password1,Linux,備註二
-192.168.2.10,root,rootpass,ESXi,備註三
-192.168.2.30,admin2,pass456,Windows,備註四
