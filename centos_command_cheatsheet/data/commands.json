@@ -1,38 +1,70 @@
 {
   "system": [
     {
-      "title": "查看系統版本",
+      "title": "查詢 CentOS 版本",
       "command": "cat /etc/centos-release",
-      "description": "顯示目前安裝的 CentOS 版本"
+      "description": "顯示目前的 CentOS 作業系統版本"
     },
     {
-      "title": "重新啟動系統",
-      "command": "reboot",
-      "description": "重新啟動作業系統"
+      "title": "查詢核心版本",
+      "command": "uname -r",
+      "description": "顯示目前使用的 Linux 核心版本"
+    },
+    {
+      "title": "查詢開機時間",
+      "command": "uptime",
+      "description": "顯示系統啟動至今的時間與系統負載"
+    }
+  ],
+  "performance": [
+    {
+      "title": "即時效能監控",
+      "command": "top",
+      "description": "顯示即時 CPU、記憶體使用與處理程序"
+    },
+    {
+      "title": "更進階的效能監控",
+      "command": "htop",
+      "description": "類似 top，但具有圖形化介面（需另行安裝）"
+    },
+    {
+      "title": "檔案或資料夾使用空間",
+      "command": "du -sh *",
+      "description": "查看目前目錄下每個項目的大小（加總）"
+    }
+  ],
+  "storage": [
+    {
+      "title": "查詢磁碟使用情況",
+      "command": "df -h",
+      "description": "以人類可讀格式顯示磁碟使用情況"
+    },
+    {
+      "title": "列出掛載點",
+      "command": "mount | column -t",
+      "description": "顯示所有已掛載的磁碟與對應裝置"
+    },
+    {
+      "title": "查看 LVM 設定",
+      "command": "lvs && vgs && pvs",
+      "description": "列出邏輯卷、卷組與實體卷資訊"
     }
   ],
   "network": [
     {
-      "title": "查看 IP 位址",
+      "title": "查詢 IP 位址",
       "command": "ip a",
-      "description": "顯示目前的網路介面和 IP 位址"
+      "description": "顯示目前網路介面與 IP 設定"
     },
     {
-      "title": "重新啟動網路服務",
-      "command": "systemctl restart network",
-      "description": "重新啟動 CentOS 的網路服務"
-    }
-  ],
-  "package": [
-    {
-      "title": "安裝軟體",
-      "command": "yum install <package-name>",
-      "description": "使用 yum 安裝指定的套件"
+      "title": "檢查網路是否通",
+      "command": "ping 8.8.8.8",
+      "description": "檢查網路連線是否正常"
     },
     {
-      "title": "更新所有套件",
-      "command": "yum update -y",
-      "description": "更新所有已安裝套件"
+      "title": "查看開啟的 port",
+      "command": "ss -tuln",
+      "description": "顯示目前系統上開啟的 TCP/UDP port"
     }
   ]
 }
