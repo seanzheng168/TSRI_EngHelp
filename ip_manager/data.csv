@@ -1,0 +1,5 @@
+IP,系統,類別,備註
+192.168.1.10,Storage01,NetApp,主存儲設備
+192.168.1.20,ESXi01,VMware,虛擬化主機
+192.168.1.30,AD01,Windows,主要DC
+192.168.1.40,Backup01,NetApp,備份用途
