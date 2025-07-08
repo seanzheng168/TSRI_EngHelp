@@ -50,16 +50,6 @@
       "title": "磁碟櫃狀態",
       "command": "storage shelf show",
       "description": "查看磁碟櫃與機櫃通訊狀況"
-    },
-    {
-      "title": "Aggregate 狀態",
-      "command": "aggr show",
-      "description": "顯示所有 Aggregate 的使用狀況"
-    },
-    {
-      "title": "Volume 狀態",
-      "command": "volume show",
-      "description": "顯示所有 Volume 的使用情況與狀態"
     }
   ],
   "network": [
