@@ -4,13 +4,20 @@ fetch('data/commands.json')
   .then(response => response.json())
   .then(data => {
     commandsData = data;
+
+    // 預設載入 Volume 分類
+    showCategory('volume');
+  })
+  .catch(err => {
+    document.getElementById('commands-container').innerHTML = '<p>資料載入失敗</p>';
+    console.error(err);
   });
 
 function showCategory(category) {
   const container = document.getElementById('commands-container');
   container.innerHTML = '';
 
-  if (!commandsData[category]) {
+  if (!commandsData[category] || commandsData[category].length === 0) {
     container.innerHTML = '<p>尚無此分類資料</p>';
     return;
   }
