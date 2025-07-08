@@ -78,5 +78,5 @@
       "command": "network interface show",
       "description": "列出所有網路介面狀態"
     }
-  ],
+  ]
 }
