@@ -18,7 +18,67 @@
       "description": "列出目前的 Aggregate 狀態"
     }
   ],
+  "system": [
+    {
+      "title": "節點狀態",
+      "command": "system node show",
+      "description": "查看所有節點的運行狀況"
+    },
+    {
+      "title": "叢集狀態",
+      "command": "cluster show",
+      "description": "檢查整個叢集的健康狀態"
+    },
+    {
+      "title": "系統健康摘要",
+      "command": "system health status show",
+      "description": "顯示系統整體健康狀況"
+    },
+    {
+      "title": "健康子系統狀態",
+      "command": "system health subsystem show",
+      "description": "查看各子系統的健康狀態"
+    }
+  ],  
+  "storage": [
+    {
+      "title": "顯示壞掉的磁碟",
+      "command": "storage disk show -broken",
+      "description": "列出所有壞掉的磁碟"
+    },
+    {
+      "title": "顯示所有磁碟",
+      "command": "storage disk show",
+      "description": "列出目前系統內所有磁碟資訊"
+    },
+    {
+      "title": "磁碟櫃狀態",
+      "command": "storage shelf show",
+      "description": "查看磁碟櫃與機櫃通訊狀況"
+    },
+    {
+      "title": "Aggregate 狀態",
+      "command": "aggr show",
+      "description": "顯示所有 Aggregate 的使用狀況"
+    },
+    {
+      "title": "Volume 狀態",
+      "command": "volume show",
+      "description": "顯示所有 Volume 的使用情況與狀態"
+    }
+  ],
   "network": [
+    {
+      "title": "網卡狀態",
+      "command": "network port show",
+      "description": "顯示所有網路埠的運作狀態"
+    },
+    {
+      "title": "Broadcast Domain 狀態",
+      "command": "network port broadcast-domain show",
+      "description": "檢查網路區域分布是否正確"
+    }
+  ],
     {
       "title": "顯示網路介面",
       "command": "network interface show",
