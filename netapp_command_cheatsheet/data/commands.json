@@ -77,12 +77,11 @@
       "title": "Broadcast Domain 狀態",
       "command": "network port broadcast-domain show",
       "description": "檢查網路區域分布是否正確"
-    }
-  ],
+    },
     {
       "title": "顯示網路介面",
       "command": "network interface show",
       "description": "列出所有網路介面狀態"
     }
-  ]
+  ],
 }
