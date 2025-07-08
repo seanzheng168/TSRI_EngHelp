@@ -25,11 +25,6 @@
       "description": "查看所有節點的運行狀況"
     },
     {
-      "title": "叢集狀態",
-      "command": "cluster show",
-      "description": "檢查整個叢集的健康狀態"
-    },
-    {
       "title": "系統健康摘要",
       "command": "system health status show",
       "description": "顯示系統整體健康狀況"
