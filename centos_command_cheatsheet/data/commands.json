@@ -11,9 +11,68 @@
       "description": "顯示目前使用的 Linux 核心版本"
     },
     {
+      "title": "系統資源統計",
+      "command": "sar -u 1 5",
+      "description": "收集並顯示 CPU 使用統計（需安裝 sysstat）"
+    },
+    {
+      "title": "整合監控工具",
+      "command": "dstat",
+      "description": "整合 CPU、disk、net、memory 等資訊（需安裝）"
+    },
+    {
+      "title": "全方位資源監控",
+      "command": "glances",
+      "description": "一次查看系統各項資源使用情況（需安裝）"
+    },    
+    {
       "title": "查詢開機時間",
       "command": "uptime",
       "description": "顯示系統啟動至今的時間與系統負載"
+    }
+  ],
+   "cpu": [
+    {
+      "title": "即時系統狀況",
+      "command": "top",
+      "description": "顯示 CPU、記憶體與程序使用狀況"
+    },
+    {
+      "title": "加強版 top",
+      "command": "htop",
+      "description": "更直觀的系統監控介面（需安裝）"
+    },
+    {
+      "title": "各核心 CPU 使用率",
+      "command": "mpstat -P ALL 1",
+      "description": "每秒顯示所有 CPU 核心的使用率（需安裝 sysstat）"
+    },
+    {
+      "title": "各程序 CPU 使用率",
+      "command": "pidstat -u -p ALL 1",
+      "description": "顯示各程序 CPU 使用情形（需安裝 sysstat）"
+    },
+    {
+      "title": "CPU 使用率排序",
+      "command": "ps -eo pid,ppid,%cpu,%mem,cmd --sort=-%cpu | head",
+      "description": "列出 CPU 使用率最高的程序"
+    }
+  ],
+  "memory": [
+    {
+      "title": "查看記憶體使用情況",
+      "command": "free -h",
+      "description": "以人類可讀方式顯示記憶體使用"
+    },
+    {
+      "title": "虛擬記憶體統計",
+      "command": "vmstat 1",
+      "description": "顯示記憶體、CPU、I/O 的即時資訊"
+    },
+    {
+      "title": "記憶體資訊",
+      "command": "cat /proc/meminfo",
+      "description": "顯示系統記憶體詳細統計"
     }
   ],
   "performance": [
@@ -33,11 +92,31 @@
       "description": "查看目前目錄下每個項目的大小（加總）"
     }
   ],
-  "storage": [
+  "disk": [
     {
       "title": "查詢磁碟使用情況",
       "command": "df -h",
       "description": "以人類可讀格式顯示磁碟使用情況"
+    },
+    {
+      "title": "查看資料夾大小",
+      "command": "du -sh *",
+      "description": "查看當前目錄下每個資料夾的大小"
+    },
+    {
+      "title": "磁碟 I/O 使用",
+      "command": "iostat -x 1",
+      "description": "磁碟詳細輸入輸出統計（需安裝 sysstat）"
+    },
+    {
+      "title": "程序 I/O 使用情況",
+      "command": "iotop",
+      "description": "顯示程序層級的磁碟 I/O 使用（需安裝）"
+    },
+    {
+      "title": "磁碟與分割資訊",
+      "command": "lsblk",
+      "description": "列出系統磁碟與分割區"
     },
     {
       "title": "列出掛載點",
@@ -57,9 +136,19 @@
       "description": "顯示目前網路介面與 IP 設定"
     },
     {
-      "title": "檢查網路是否通",
-      "command": "ping 8.8.8.8",
-      "description": "檢查網路連線是否正常"
+      "title": "即時網路流量",
+      "command": "iftop",
+      "description": "顯示網路介面傳輸資料流量（需安裝）"
+    },
+    {
+      "title": "網路流量圖",
+      "command": "nload",
+      "description": "圖形化顯示網路流量（需安裝）"
+    },
+    {
+      "title": "網卡狀態",
+      "command": "ethtool eth0",
+      "description": "查看指定網卡的連線狀況（eth0 請替換）"
     },
     {
       "title": "查看開啟的 port",
