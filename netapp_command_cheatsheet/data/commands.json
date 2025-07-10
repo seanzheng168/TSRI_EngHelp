@@ -51,7 +51,6 @@
       "description": "顯示 Volume 實際使用的儲存空間"
     }
   ],
-
   "aggr": [
     {
       "title": "列出所有 Aggregate",
