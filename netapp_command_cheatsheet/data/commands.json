@@ -113,6 +113,33 @@
       "description": "查看磁碟櫃與機櫃通訊狀況"
     }
   ],
+  "snapshot": [
+    {
+      "title": "顯示 Snapshot",
+      "command": "snapshot show -vserver vs1 -volume vol1",
+      "description": "顯示 Volume 的 Snapshot"
+    },
+    {
+      "title": "建立 Snapshot",
+      "command": "snapshot create -vserver vs1 -volume vol1 -snapshot snap1",
+      "description": "建立一個新的 Snapshot"
+    },
+    {
+      "title": "刪除 Snapshot",
+      "command": "snapshot delete -vserver vs1 -volume vol1 -snapshot snap1",
+      "description": "刪除指定的 Snapshot"
+    },
+    {
+      "title": "還原 Snapshot",
+      "command": "snapshot restore -vserver vs1 -volume vol1 -snapshot snap1",
+      "description": "從 Snapshot 還原 Volume"
+    },
+    {
+      "title": "顯示 Snapshot 使用空間",
+      "command": "snapshot show -fields total,used",
+      "description": "顯示 Snapshot 佔用空間資訊"
+    }
+  ],
   "network": [
     {
       "title": "網卡狀態",
