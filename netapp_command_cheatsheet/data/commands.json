@@ -54,9 +54,29 @@
 
   "aggr": [
     {
-      "title": "查看 Aggregate 資訊",
+      "title": "列出所有 Aggregate",
       "command": "aggr show",
-      "description": "列出目前的 Aggregate 狀態"
+      "description": "顯示所有 Aggregate 資訊"
+    },
+    {
+      "title": "建立 Aggregate",
+      "command": "aggr create -aggregate aggr1 -diskcount 10 -node node1",
+      "description": "建立新的 Aggregate"
+    },
+    {
+      "title": "新增磁碟至 Aggregate",
+      "command": "aggr add-disks -aggregate aggr1 -diskcount 2",
+      "description": "為 Aggregate 新增磁碟"
+    },
+    {
+      "title": "Aggregate 下線",
+      "command": "aggr offline -aggregate aggr1",
+      "description": "將 Aggregate 設為 Offline"
+    },
+    {
+      "title": "Aggregate 上線",
+      "command": "aggr online -aggregate aggr1",
+      "description": "將 Aggregate 設為 Online"
     }
   ],
   "system": [
