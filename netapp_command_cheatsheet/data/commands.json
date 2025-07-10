@@ -7,10 +7,51 @@
     },
     {
       "title": "建立 Volume",
-      "command": "volume create -vserver vs1 -volume vol1 -aggregate aggr1 -size 1g",
+      "command": "volume create -vserver vs1 -volume vol1 -aggregate aggr1 -size 100G",
       "description": "建立一個新的 Volume"
+    },
+    {
+      "title": "刪除 Volume",
+      "command": "volume delete -vserver vs1 -volume vol1",
+      "description": "刪除指定的 Volume"
+    },
+    {
+      "title": "重新命名 Volume",
+      "command": "volume rename -vserver vs1 -volume vol1 -newname vol2",
+      "description": "重新命名指定的 Volume"
+    },
+    {
+      "title": "調整 Volume 大小",
+      "command": "volume size -vserver vs1 -volume vol1 -new-size 200G",
+      "description": "擴充或縮減 Volume 容量"
+    },
+    {
+      "title": "下線 Volume",
+      "command": "volume modify -vserver vs1 -volume vol1 -state offline",
+      "description": "將 Volume 設為 offline 狀態"
+    },
+    {
+      "title": "上線 Volume",
+      "command": "volume modify -vserver vs1 -volume vol1 -state online",
+      "description": "將 Volume 設為 online 狀態"
+    },
+    {
+      "title": "掛載 Volume",
+      "command": "volume mount -vserver vs1 -volume vol1 -junction-path /vol1",
+      "description": "掛載 Volume 至指定路徑"
+    },
+    {
+      "title": "卸載 Volume",
+      "command": "volume unmount -vserver vs1 -volume vol1",
+      "description": "將 Volume 卸載"
+    },
+    {
+      "title": "顯示 Volume 使用空間",
+      "command": "volume show-footprint -vserver vs1 -volume vol1",
+      "description": "顯示 Volume 實際使用的儲存空間"
     }
   ],
+
   "aggr": [
     {
       "title": "查看 Aggregate 資訊",
